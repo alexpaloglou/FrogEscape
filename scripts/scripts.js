@@ -1,6 +1,40 @@
 FrogEscapeApp = {
-    init: function() {
+    init: function () {
 
-    }
-}
-FrogEscapeApp.init();
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    moveBubba: function () {
+
+    },
+
+    startFrogEscape: function () {
+
+    },
+
+    backroundScroll: function () {
+
+    },
+
+    createLongboiHawk: function () {
+
+    },
+
+    CreateGameOver: function () {
+
+    }, 
+},
+
+    FrogEscapeApp.init();
