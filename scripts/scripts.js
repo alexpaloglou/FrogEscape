@@ -36,6 +36,8 @@ FrogEscapeApp = {
     CreateGameOver: function () {
 
     }, 
+
+    
 },
 
 FrogEscapeApp.init();
