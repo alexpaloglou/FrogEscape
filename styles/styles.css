@@ -1,0 +1,22 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: green;
+    color: #470;
+}
+
+#frog_escape {
+    display: flex;
+}
+
+#frog_container {
+    display: flex;
+}
+
+.bubba {
+
+}
