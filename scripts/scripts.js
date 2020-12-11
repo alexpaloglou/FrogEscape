@@ -17,25 +17,33 @@ FrogEscapeApp = {
 
     },
 
-    moveBubba: function () {
+    moveBubba: function() {
 
     },
 
-    startFrogEscape: function () {
+    startFrogEscape: function() {
 
     },
 
-    backroundScroll: function () {
+    backroundScroll: function() {
 
     },
 
-    createLongboiHawk: function () {
+    createLongboiHawk: function() {
 
     },
 
-    CreateGameOver: function () {
+    animateLongboiHawk: function() {
+
+    },
+
+    CreateGameOver: function() {
 
     }, 
+
+    checkforCollision: function() {
+
+    },
 
     
 },
