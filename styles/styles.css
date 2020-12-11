@@ -5,18 +5,44 @@ html {
 
 body {
     font-family: sans-serif;
-    background-color: green;
-    color: #470;
+    background-color: white;
+    
+}
+
+h1 {
+    font-size: 2.0em;
+    margin: auto;
 }
 
 #frog_escape {
     display: flex;
+    flex-direction: column;
+    justify-content: middle;
+    width: 500px;
+    height: 700px;
+    border: 5px solid rgb(12, 49, 29);
+    border-radius: 10px;
+    background-color: white;
+    margin: auto;
 }
 
 #frog_container {
+    width: 495px;
+    height: 745px;
+    border: 5px solid #2cb391;
+    border-radius: 10px;
+    position: relative;
+    margin: auto;
+    
+}
+
+#row {
     display: flex;
+    flex-wrap: wrap;
+    
 }
 
 .bubba {
     display: flex;
+    
 }
