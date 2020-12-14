@@ -1,7 +1,7 @@
 FrogEscapeApp = {
     init: function() {
         // window.onkeydown = function() {}
-    },
+    }, 
     createBubba: function() {
 
     },
