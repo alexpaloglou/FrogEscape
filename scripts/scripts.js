@@ -2,6 +2,8 @@ FrogEscapeApp = {
 
     
     lilypad: [],
+    game: undefined,
+    container: document.getElementById("frog_container"),
 
     init: function() {
         for (let i = 1; i < 100; i++) {
@@ -11,9 +13,18 @@ FrogEscapeApp = {
 
         // window.onkeydown = function() {}
     }, 
-    createBubba: function() {
 
+    createBubba: function() {
+        let Bubbadiv = document.createElement("div");
+        Bubbadiv.className = "Bubba";
+        this.container.append(Bubbadiv);
+        let Bubba = {
+            lilypadOn: false
+        
+        }
+        return Bubba;
     },
+
     animateBubba: function() {
 
     },
@@ -25,8 +36,9 @@ FrogEscapeApp = {
         let lilypad = {
             frogOn: false,
             x_velocity: 0,
-            y_velocity: 0
+            y_velocity: 0,
         }
+        return lilypad
     },
 
     checkforLilypad: function() {
@@ -38,7 +50,7 @@ FrogEscapeApp = {
     },
 
     startFrogEscape: function() {
-
+        this.game = window.setInterval(this.animateBubba.bind(FrogEscapeApp), 30);
     },
 
     backroundScroll: function() {
@@ -50,7 +62,8 @@ FrogEscapeApp = {
     },
 
     animateLongboiHawk: function() {
-
+        let Longboihawkdiv = document.createElement("div");
+        frogdiv.className = "LongboiHawk"; 
     },
 
     CreateGameOver: function() {
