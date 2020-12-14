@@ -11,31 +11,30 @@ body {
 
 h1 {
     font-size: 2.0em;
-    justify-content: middle;
+    text-align: center;
+    
 }
 
 #frog_escape {
     position: fixed;
     display: flex;
     flex-direction: column;
-    justify-content: middle;
     width: 500px;
     height: 700px;
     border: 5px solid rgb(12, 109, 29);
     border-radius: 10px;
     background-color: white;
+    align-content: middle;
     margin-left: 700px;
-    margin-top: 50px;
     
 }
 
-#frog_container {
-    width: 495px;
-    height: 745px;
-    border: 5px solid #2cb391;
-    border-radius: 10px;
-    position: relative;
+.frog_container {
     margin: auto;
+    width: 460px;
+    height: 700px;
+    border: 3px solid green;
+    padding: 20px;
     
 }
 
