@@ -1,6 +1,6 @@
 FrogEscapeApp = {
 
-    
+    rows: null,
     lilypad: [],
     game: undefined,
     container: document.getElementById("frog_container"),
@@ -10,6 +10,12 @@ FrogEscapeApp = {
             this.lilypad.push(this.createLilypad());
         };
         this.lilypad[0].frogOn = true;
+
+        for (let i = 0; i < 4; i++) {
+            let row = document.createElement("div");
+            row.className = "row";
+            rows_container.appendChild(row);
+        }
 
         // window.onkeydown = function() {}
     }, 
@@ -73,6 +79,7 @@ FrogEscapeApp = {
     checkforCollision: function() {
 
     },
+
 
     
 },
