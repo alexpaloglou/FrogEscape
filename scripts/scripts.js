@@ -1,41 +1,39 @@
 FrogEscapeApp = {
 
     rows: null,
+
     lilypad: [],
     game: undefined,
     container: document.getElementById("frog_container"),
 
-    init: function() {
+    init: function () {
         for (let i = 1; i < 100; i++) {
             this.lilypad.push(this.createLilypad());
         };
         this.lilypad[0].frogOn = true;
 
-        for (let i = 0; i < 4; i++) {
-            let row = document.createElement("div");
-            row.className = "row";
-            rows_container.appendChild(row);
-        }
+       
+        
 
         // window.onkeydown = function() {}
-    }, 
+    },
 
-    createBubba: function() {
+    createBubba: function () {
         let Bubbadiv = document.createElement("div");
         Bubbadiv.className = "Bubba";
         this.container.append(Bubbadiv);
         let Bubba = {
             lilypadOn: false
-        
+
         }
         return Bubba;
     },
 
-    animateBubba: function() {
+    animateBubba: function () {
 
     },
 
-    createLilypad: function() {
+    createLilypad: function () {
         let lilypaddiv = document.createElement("div");
         lilypaddiv.className = "lilypad";
         this.container.append(lilypaddiv);
@@ -47,36 +45,36 @@ FrogEscapeApp = {
         return lilypad
     },
 
-    checkforLilypad: function() {
+    checkforLilypad: function () {
 
     },
 
-    moveBubba: function() {
+    moveBubba: function () {
 
     },
 
-    startFrogEscape: function() {
+    startFrogEscape: function () {
         this.game = window.setInterval(this.animateBubba.bind(FrogEscapeApp), 30);
     },
 
-    backroundScroll: function() {
+    backroundScroll: function () {
 
     },
 
-    createLongboiHawk: function() {
+    createLongboiHawk: function () {
 
     },
 
-    animateLongboiHawk: function() {
+    animateLongboiHawk: function () {
         let Longboihawkdiv = document.createElement("div");
-        frogdiv.className = "LongboiHawk"; 
+        Longboihawkdiv.className = "LongboiHawk";
     },
 
-    CreateGameOver: function() {
+    CreateGameOver: function () {
 
-    }, 
+    },
 
-    checkforCollision: function() {
+    checkforCollision: function () {
 
     },
 
@@ -84,8 +82,8 @@ FrogEscapeApp = {
     
 },
 
-FrogEscapeApp.init();
-    
+    FrogEscapeApp.init();
+
 
 
 
