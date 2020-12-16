@@ -23,7 +23,8 @@ FrogEscapeApp = {
         Bubbadiv.className = "Bubba";
         this.container.append(Bubbadiv);
         let Bubba = {
-            lilypadOn: false
+            lilypadOn: false,
+            element: Bubbadiv,
 
         }
         return Bubba;
