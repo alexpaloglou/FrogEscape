@@ -40,11 +40,18 @@ FrogEscapeApp = {
         this.container.append(lilypaddiv);
         let lilypad = {
             frogOn: false,
+            x_pos: Math.random() * 200,
+            y_pos: Math.random() * 400,
             x_velocity: 0,
-            y_velocity: 0,
+            y_velocity: 20,
+            element: lilypaddiv,
+
         }
+        console.log(lilypad);
         return lilypad
     },
+
+    
 
     checkforLilypad: function () {
 
