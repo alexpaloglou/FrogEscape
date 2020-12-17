@@ -25,7 +25,9 @@ FrogEscapeApp = {
         let Bubba = {
             lilypadOn: false,
             element: Bubbadiv,
-
+            x_pos: Math.random() * 450,
+            y_pos: Math.random() * 700,
+            
         }
         return Bubba;
     },
