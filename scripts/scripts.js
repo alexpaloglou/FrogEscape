@@ -33,7 +33,15 @@ FrogEscapeApp = {
     },
 
     animateBubba: function () {
-
+        this.createBubba();
+        this.createLilypad(); 
+        this.createLongboiHawk();
+        this.moveBubba();
+        this.backroundScroll();
+        this.CreateGameOver();
+        this.animateLongboiHawk();
+        this.animateBubba();
+        this.checkforCollision();
     },
 
     createLilypad: function () {
