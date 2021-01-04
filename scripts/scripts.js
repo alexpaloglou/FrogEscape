@@ -1,100 +1,81 @@
 FrogEscapeApp = {
 
-    rows: null,
+    lanes: [
+        document.getElementById("pondLane1"), 
+        document.getElementById("pondLane2"),
+        document.getElementById("pondLane3"),
+        document.getElementById("pondLane4"),
+    ],
 
     lilypad: [],
     game: undefined,
     container: document.getElementById("frog_container"),
 
     init: function () {
-        for (let i = 1; i < 100; i++) {
-            this.lilypad.push(this.createLilypad());
-        };
-        this.lilypad[0].frogOn = true;
+        
 
        
         
 
         // window.onkeydown = function() {}
+        this.startFrogEscape();
+
     },
 
-    createBubba: function () {
-        let Bubbadiv = document.createElement("div");
-        Bubbadiv.className = "Bubba";
-        this.container.append(Bubbadiv);
-        let Bubba = {
-            lilypadOn: false,
-            element: Bubbadiv,
-            x_pos: Math.random() * 450,
-            y_pos: Math.random() * 700,
-            
-        }
-        return Bubba;
-    },
-
-    animateBubba: function () {
-        this.createBubba();
+    animateGame: function () {
         this.createLilypad(); 
-        this.createLongboiHawk();
-        this.moveBubba();
-        this.backroundScroll();
-        this.CreateGameOver();
-        this.animateLongboiHawk();
-        this.animateBubba();
-        this.checkforCollision();
+        this.moveLilypads();
+        this.removeLilypads();
+        // this.animateBubba();
+        this.checkBubbaPosition();
     },
 
     createLilypad: function () {
-        let lilypaddiv = document.createElement("div");
-        lilypaddiv.className = "lilypad";
-        this.container.append(lilypaddiv);
-        let lilypad = {
-            frogOn: false,
-            x_pos: Math.random() * 200,
-            y_pos: Math.random() * 400,
-            x_velocity: 0,
-            y_velocity: 20,
-            element: lilypaddiv,
-
-        }
-        console.log(lilypad);
-        return lilypad
-    },
-
+        console.log("Creating Lilypads.")
+       // let lilypaddiv = document.createElement("div");
+       // lilypaddiv.className = "lilypad";
+        // Randomly decide which row 0,1,2,3
+        // Append to that chosen row
+        // Set the vertical position to the top
     
 
-    checkforLilypad: function () {
+        //let lilypad = {
+          //  frogOn: false,
+           // x_velocity: 0,
+           // y_velocity: 20,
+           // element: lilypaddiv,
+            
+        
 
+
+        
+       // console.log(lilypad);
+// return lilypad
+    },
+
+
+
+    moveLilypads: function () {
+        console.log("Moving Lilypads")
+
+    },
+
+    removeLilypads: function () {
+        console.log("Removing any Lilypads that needs to be removed.")
     },
 
     moveBubba: function () {
 
     },
 
+    checkBubbaPosition: function () {
+        console.log("Checking Bubba's position.")
+    },
+
     startFrogEscape: function () {
-        this.game = window.setInterval(this.animateBubba.bind(FrogEscapeApp), 30);
+        this.game = window.setInterval(this.animateGame.bind(FrogEscapeApp), 30);
     },
 
-    backroundScroll: function () {
-
-    },
-
-    createLongboiHawk: function () {
-
-    },
-
-    animateLongboiHawk: function () {
-        let Longboihawkdiv = document.createElement("div");
-        Longboihawkdiv.className = "LongboiHawk";
-    },
-
-    CreateGameOver: function () {
-
-    },
-
-    checkforCollision: function () {
-
-    },
 
 
     

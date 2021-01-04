@@ -35,28 +35,26 @@ h1 {
     margin: auto;
     width: 460px;
     height: 700px;
-    border: 2px solid green;
     padding: 10px;
+    background-color: aqua;
+    border: 3px solid black;
     
 }
 
-.row {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-flow: row wrap;
-    align-items: stretch;
-    border: 10px dashed blue;
+.pondLane {
+    position: relative;
+    width: 100px;
+    border: 1px solid black;
     
 }
 
 .bubba {
+    position: absolute;
+    background-color: red;
     height: 10px;
     width: 10px;
-    background-color: darkgreen;
-    border: 1px solid black;
-    border-radius: 5px;
-    position: absolute;
+    top: 10px;
+    left: 10px;
 }
 
 .lilypad {
