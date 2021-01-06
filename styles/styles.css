@@ -22,12 +22,11 @@ h1 {
     width: 550px;
     border: 3px solid #eee;
     border-radius: 10px;
+    margin: auto;
     padding-top: 10px;
     padding-left: 30px;
     padding-right: 30px;
-    margin: auto;
     padding-bottom: 80px;
-    
 }
 
 #frog_container {
@@ -42,8 +41,9 @@ h1 {
 }
 
 .pondLane {
+    display: flex;
     position: relative;
-    width: 100px;
+    width: 115px;
     border: 1px solid black;
     
 }
