@@ -16,9 +16,6 @@ FrogEscapeApp = {
             this.lilypads.push(this.createLilypad())
         };
 
-
-
-
         // window.onkeydown = function() {}
         this.startFrogEscape();
         this.renderLilypads();
