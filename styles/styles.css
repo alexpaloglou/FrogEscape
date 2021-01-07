@@ -33,24 +33,17 @@ h1 {
 
 #frog_container {
     display: flex;
-    position: relative;
-    flex-direction: row;
-    flex-flow: row wrap;
     margin: auto;
     width: 500px;
     height: 700px;
-    padding: 10px;
     background-color: aqua;
     border: 3px solid black;
     
 }
 
 .pondLane {
-    display: flex;
     position: relative;
-    flex-flow: row wrap;
-    width: 150px;
-    height: 100px;
+    width: 125px;
     border: 1px solid black;
     
 }
