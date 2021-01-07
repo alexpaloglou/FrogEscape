@@ -18,7 +18,7 @@ FrogEscapeApp = {
 
         // window.onkeydown = function() {}
         this.startFrogEscape();
-        this.renderLilypads();
+        
     },
 
     startFrogEscape: function () {
@@ -28,13 +28,14 @@ FrogEscapeApp = {
     animateGame: function () {
       //  this.createLilypad(); 
         this.moveLilypads();
+      //  this.renderLilypads();
         this.removeLilypads();
         // this.animateBubba();
         this.checkBubbaPosition();
     },
 
     createLilypad: function () {
-        console.log("Creating Lilypads.")
+        
         let lilypaddiv = document.createElement("div");
         lilypaddiv.className = "lilypad";
         this.container.append(lilypaddiv)
@@ -43,7 +44,7 @@ FrogEscapeApp = {
             x_pos: 10,
             y_pos: 10,
             x_velocity: 0,
-            y_velocity: 40,
+            y_velocity: 1,
 
 
             element: lilypaddiv,
@@ -51,6 +52,7 @@ FrogEscapeApp = {
         // Append to that chosen row
         // Set the vertical position to the top
         }
+        console.log(lilypad);
         // console.log(lilypad);
         return lilypad
     },
@@ -63,10 +65,12 @@ FrogEscapeApp = {
         console.log("Moving Lilypads");
         for (let i = 0; i < this.lilypads.length; i++) {
             this.lilypads[i].y_pos = this.lilypads[i].y_pos + this.lilypads[i].y_velocity;
+            this.lilypads[i].x_pos = this.lilypads[i].x_pos + this.lilypads[i].x_velocity;
         }
     },
 
     renderLilypads: function () {
+        console.log("Rendering Lilypads");
         for (let i = 0; i < this.lilypads.length; i++) {
             this.lilypads[i].element.style.top = this.lilypads[i].y_pos + "px";
             this.lilypads[i].element.style.left = this.lilypads[i].x_pos + "px";
@@ -77,6 +81,12 @@ FrogEscapeApp = {
 
     removeLilypads: function () {
         //  console.log("Removing any Lilypads that needs to be removed.")
+        //  let lilypad = document.getElementsByClassName('lilypad');
+       // for (let i = 0; i < this.lilypads.length; i++) {
+         //   if (this.lilypads[i].y_pos = 700) {
+            //    lilypad.parentNode.removeChild(lilypad);
+          //  }
+      //  }
     },
 
     moveBubba: function () {
