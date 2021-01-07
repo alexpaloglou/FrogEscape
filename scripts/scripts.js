@@ -80,13 +80,13 @@ FrogEscapeApp = {
 
 
     removeLilypads: function () {
-        //  console.log("Removing any Lilypads that needs to be removed.")
-        //  let lilypad = document.getElementsByClassName('lilypad');
-       // for (let i = 0; i < this.lilypads.length; i++) {
-         //   if (this.lilypads[i].y_pos = 700) {
-            //    lilypad.parentNode.removeChild(lilypad);
-          //  }
-      //  }
+          console.log("Removing any Lilypads that needs to be removed.")
+          let lilypad = document.getElementsByClassName('lilypad');
+        for (let i = 0; i < this.lilypads.length; i++) {
+            if (this.lilypads[i].y_pos = 700) {
+                lilypad.parentNode.removeChild();
+            }
+        }
     },
 
     moveBubba: function () {
