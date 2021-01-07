@@ -9,7 +9,7 @@ FrogEscapeApp = {
 
     lilypads: [],
     game: undefined,
-    container: document.getElementById("frog_container"),
+    container: document.getElementById("frog_pond"),
 
     init: function () {
         for (let i = 0; i < 10; i++) {
