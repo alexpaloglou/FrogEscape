@@ -1,32 +1,20 @@
 FrogEscapeApp = {
 
-    lanes: [
-        document.getElementById("pondLane1"),
-        document.getElementById("pondLane2"),
-        document.getElementById("pondLane3"),
-        document.getElementById("pondLane4"),
-    ],
+    lanes: document.getElementById("pondLane1"),
 
     lilypads: [],
     game: undefined,
     container: document.getElementById("frog_pond"),
+    interval: undefined,
 
     init: function () {
-        for (let i = 0; i < 5; i++) {
-            this.lilypads.push(this.createLilypad(0))
-        
-        }
-        this.lilypads[0].x_pos = 35
-            this.lilypads[2].x_pos = 285
 
-            this.lilypads[3].x_pos = 410
-            this.lilypads[3].y_pos = 35
-            this.lilypads[4].x_pos = 410
-            this.lilypads[4].y_pos = 100
 
-        
+
+
         // window.onkeydown = function() {}
         this.startFrogEscape();
+        this.intervalLilypad();
 
     },
 
@@ -36,20 +24,20 @@ FrogEscapeApp = {
     },
 
     animateGame: function () {
-       // this.createLilypad(); 
+        // this.createLilypad(); 
         this.moveLilypads();
         this.renderLilypads();
         this.removeLilypads();
         // this.animateBubba();
-       // this.checkBubbaPosition();
+        // this.checkBubbaPosition();
     },
 
-    createLilypad: function (lane) {
+    createLilypad: function () {
         console.log("Creating Lilypads.")
         let lilypaddiv = document.createElement("div");
         lilypaddiv.className = "lilypad";
-        FrogEscapeApp.lanes[lane].append(lilypaddiv);
-        
+        FrogEscapeApp.lanes.append(lilypaddiv);
+
         // Randomly decide which row 0,1,2,3
         // Append to that chosen row
         // Set the vertical position to the top
@@ -57,17 +45,21 @@ FrogEscapeApp = {
         // Make x_pos: 35, 160, 285, 410
 
         let lilypad = {
-            x_pos: 160,
+            x_pos: Math.round(Math.random() * 3) * 125 + 35,
             y_pos: 10,
             x_velocity: 0,
             y_velocity: 3,
 
             element: lilypaddiv,
         }
+        FrogEscapeApp.lilypads.push(lilypad);
         // console.log(lilypad);
         return lilypad
     },
 
+    intervalLilypad: function () {
+        this.interval = window.setInterval(this.createLilypad.bind(FrogEscapeApp), 1000)
+    },
 
 
     moveLilypads: function () {
@@ -89,19 +81,20 @@ FrogEscapeApp = {
 
 
     removeLilypads: function () {
-          console.log("Removing any Lilypads that needs to be removed.")
-            for (let i = 0; i < this.lilypads.length; i++) {
-                if (this.lilypads[i].x_pos != null) {
-                    if (this.lilypads[i].y_pos >= 700) {
-                    this.lanes[0].removeChild(this.lilypads[i].element)
-                   
-                
+        console.log("Removing any Lilypads that needs to be removed.")
+        for (let i = 0; i < this.lilypads.length; i++) {
+            if (this.lilypads[i].y_pos != null) {
+                if (this.lilypads[i].y_pos >= 700) {
+                    this.lilypads[i].y_pos = null;
+                    this.lanes.removeChild(this.lilypads[i].element)
+
+
+                }
             }
         }
-    }
-            
-            
-        
+
+
+
         //  console.log("Removing any Lilypads that needs to be removed.")
     },
 
