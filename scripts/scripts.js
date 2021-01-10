@@ -12,7 +12,7 @@ FrogEscapeApp = {
     container: document.getElementById("frog_pond"),
 
     init: function () {
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 5; i++) {
             this.lilypads.push(this.createLilypad(0))
         
         }
@@ -20,6 +20,10 @@ FrogEscapeApp = {
             this.lilypads[2].x_pos = 285
 
             this.lilypads[3].x_pos = 410
+            this.lilypads[3].y_pos = 35
+            this.lilypads[4].x_pos = 410
+            this.lilypads[4].y_pos = 100
+
         
         // window.onkeydown = function() {}
         this.startFrogEscape();
