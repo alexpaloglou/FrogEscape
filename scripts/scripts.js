@@ -8,7 +8,11 @@ FrogEscapeApp = {
     interval: undefined,
 
     init: function () {
-
+        for (let i = 0; i < 5; i++) {
+            this.lilypads.push(this.createLilypad());
+        
+            
+        }
 
 
 
@@ -24,7 +28,7 @@ FrogEscapeApp = {
     },
 
     animateGame: function () {
-        // this.createLilypad(); 
+       //  this.createLilypad(); 
         this.moveLilypads();
         this.renderLilypads();
         this.removeLilypads();
@@ -58,12 +62,12 @@ FrogEscapeApp = {
     },
 
     intervalLilypad: function () {
-        this.interval = window.setInterval(this.createLilypad.bind(FrogEscapeApp), 1000)
+        this.interval = window.setInterval(this.createLilypad.bind(FrogEscapeApp), 800)
     },
 
 
     moveLilypads: function () {
-        console.log("Moving Lilypads")
+     //   console.log("Moving Lilypads")
         for (let i = 0; i < this.lilypads.length; i++) {
             this.lilypads[i].y_pos = this.lilypads[i].y_pos + this.lilypads[i].y_velocity;
             this.lilypads[i].x_pos = this.lilypads[i].x_pos + this.lilypads[i].x_velocity;
@@ -71,7 +75,7 @@ FrogEscapeApp = {
     },
 
     renderLilypads: function () {
-        console.log("Rendering Lilypads");
+     //   console.log("Rendering Lilypads");
         for (let i = 0; i < this.lilypads.length; i++) {
             this.lilypads[i].element.style.top = this.lilypads[i].y_pos + "px";
             this.lilypads[i].element.style.left = this.lilypads[i].x_pos + "px";
@@ -81,7 +85,7 @@ FrogEscapeApp = {
 
 
     removeLilypads: function () {
-        console.log("Removing any Lilypads that needs to be removed.")
+     //   console.log("Removing any Lilypads that needs to be removed.")
         for (let i = 0; i < this.lilypads.length; i++) {
             if (this.lilypads[i].y_pos != null) {
                 if (this.lilypads[i].y_pos >= 700) {
@@ -104,6 +108,7 @@ FrogEscapeApp = {
 
     checkBubbaPosition: function () {
         //  console.log("Checking Bubba's position.")
+
     },
 
 
