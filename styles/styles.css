@@ -51,10 +51,10 @@ h1 {
 .bubba {
     position: absolute;
     background-color: red;
-    height: 10px;
-    width: 10px;
-    top: 10px;
-    left: 10px;
+    height: 20px;
+    width: 20px;
+    top: 650px;
+    left: 425px;
 }
 
 .lilypad {

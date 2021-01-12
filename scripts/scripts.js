@@ -32,6 +32,7 @@ FrogEscapeApp = {
         this.moveLilypads();
         this.renderLilypads();
         this.removeLilypads();
+        this.moveBubba();
         // this.animateBubba();
         // this.checkBubbaPosition();
     },
@@ -103,6 +104,10 @@ FrogEscapeApp = {
     },
 
     moveBubba: function () {
+        console.log("checking bubba")
+        let bubbadiv = document.createElement("div");
+        bubbadiv.className = "bubba"; 
+        FrogEscapeApp.lanes.append(bubbadiv);
 
     },
 
