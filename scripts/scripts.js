@@ -5,18 +5,22 @@ FrogEscapeApp = {
     lilypads: [],
     game: undefined,
     container: document.getElementById("frog_pond"),
+    paused: false,
     interval: undefined,
 
     init: function () {
         for (let i = 0; i < 3; i++) {
             this.lilypads.push(this.createLilypad());
-            this.lilypads[i].y_velocity = 1
-            
+            this.lilypads[i].y_velocity = 3
+
         };
-            this.lilypads[0].y_pos =  Math.random() * 150 + 150,
-            this.lilypads[1].y_pos =  Math.random() * 150 + 300,
-            this.lilypads[2].y_pos =  Math.random() * 150 + 450,
-            this.lilypads[0].y_velocity = 1
+        this.lilypads[0].y_pos = Math.random() * 150 + 150,
+            this.lilypads[1].y_pos = Math.random() * 150 + 300,
+            this.lilypads[2].y_pos = Math.random() * 150 + 450,
+            this.lilypads[0].y_velocity = 3
+
+
+            
 
 
 
@@ -32,11 +36,12 @@ FrogEscapeApp = {
     },
 
     animateGame: function () {
-       // this.createLilypad(); 
+        // this.createLilypad(); 
         this.moveLilypads();
         this.renderLilypads();
         this.removeLilypads();
-       // this.moveBubba();
+        this.togglePause();
+        // this.moveBubba();
         // this.animateBubba();
         // this.checkBubbaPosition();
     },
@@ -72,16 +77,16 @@ FrogEscapeApp = {
 
 
     moveLilypads: function () {
-     //   console.log("Moving Lilypads")
+        //   console.log("Moving Lilypads")
         for (let i = 0; i < this.lilypads.length; i++) {
             this.lilypads[i].y_pos = this.lilypads[i].y_pos + this.lilypads[i].y_velocity;
             this.lilypads[i].x_pos = this.lilypads[i].x_pos + this.lilypads[i].x_velocity;
-            
+
         }
     },
 
     renderLilypads: function () {
-     //   console.log("Rendering Lilypads");
+        //   console.log("Rendering Lilypads");
         for (let i = 0; i < this.lilypads.length; i++) {
             this.lilypads[i].element.style.top = this.lilypads[i].y_pos + "px";
             this.lilypads[i].element.style.left = this.lilypads[i].x_pos + "px";
@@ -91,15 +96,15 @@ FrogEscapeApp = {
 
 
     removeLilypads: function () {
-     //   console.log("Removing any Lilypads that needs to be removed.")
+        //   console.log("Removing any Lilypads that needs to be removed.")
         for (let i = 0; i < this.lilypads.length; i++) {
             if (this.lilypads[i].y_pos >= 700) {
-            if (this.lilypads[i].y_velocity != null) {
+                if (this.lilypads[i].y_velocity != null) {
                     this.lilypads[i].y_velocity = null;
                     this.lanes.removeChild(this.lilypads[i].element)
 
 
-            }
+                }
             }
         }
 
@@ -109,6 +114,7 @@ FrogEscapeApp = {
     },
 
     createBubba: function () {
+        //CSS Top: 650 Left: 425
         console.log("checking bubba")
         let bubbadiv = document.createElement("div");
         bubbadiv.className = "bubba";
@@ -124,7 +130,18 @@ FrogEscapeApp = {
 
     },
 
-
+    togglePause: function () {
+        window.onkeydown = function (event) {
+            if (event.keycode === 65)// A key
+            
+        if (!paused) {
+            paused = true;
+        }
+        else if (paused) {
+            paused = false;
+        }
+    }
+},
 
 
 },
