@@ -63,7 +63,6 @@ FrogEscapeApp = {
             y_pos: 10,
             x_velocity: 0,
             y_velocity: 3,
-
             element: lilypaddiv,
         }
         FrogEscapeApp.lilypads.push(lilypad);
@@ -132,7 +131,10 @@ FrogEscapeApp = {
 
     togglePause: function () {
         window.onkeydown = function (event) {
-            if (event.keycode === 65)// A key
+            if (event.keycode == 65) { // A key 
+
+            }   
+        
             
         if (!paused) {
             paused = true;
