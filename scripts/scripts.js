@@ -8,15 +8,27 @@ FrogEscapeApp = {
     interval: undefined,
 
     init: function () {
-        for (let i = 0; i < 3; i++) {
+        for (let i = 0; i < 1; i++) {
             this.lilypads.push(this.createLilypad());
-            this.lilypads[i].y_velocity = 1
+            this.lilypads[i].y_velocity = 1.8
             
+        }
+           // this.lilypads[0].y_pos =  Math.random() * 150 + 150,
+           // this.lilypads[1].y_pos =  Math.random() * 150 + 300,
+          //  this.lilypads[2].y_pos =  Math.random() * 150 + 450,
+        window.onkeydown = function (event) {
+            console.log(event.keyCode);
+            
+          // if (event.keyCode == 68)
+          // Key: d
+          // if (event.keyCode == 70)
+          // Key: f
+          // if (event.keyCode == 74)
+          // Key: j
+          // if (event.keycode == 75)
+          // Key: k
+           
         };
-            this.lilypads[0].y_pos =  Math.random() * 150 + 150,
-            this.lilypads[1].y_pos =  Math.random() * 150 + 300,
-            this.lilypads[2].y_pos =  Math.random() * 150 + 450,
-            this.lilypads[0].y_velocity = 1
 
 
 
@@ -57,7 +69,7 @@ FrogEscapeApp = {
             x_pos: Math.round(Math.random() * 3) * 125 + 35,
             y_pos: 10,
             x_velocity: 0,
-            y_velocity: 3,
+            y_velocity: 3.5,
 
             element: lilypaddiv,
         }
