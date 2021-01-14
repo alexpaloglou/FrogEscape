@@ -5,6 +5,8 @@ FrogEscapeApp = {
     document.getElementById("pondLane3"),
     document.getElementById("pondLane4"),],
 
+
+    bubba: undefined,
     lilypads: [],
     game: undefined,
     container: document.getElementById("frog_pond"),
@@ -22,26 +24,16 @@ FrogEscapeApp = {
             //this.lilypads[0].y_pos =  Math.random() * 150 + 150,
            // this.lilypads[1].y_pos =  Math.random() * 150 + 300,
           //  this.lilypads[2].y_pos =  Math.random() * 150 + 450,
-        window.onkeydown = function (event) {
-            console.log(event.keyCode);
-            
-          // if (event.keyCode == 68)
-          // Key: d
-          // if (event.keyCode == 70)
-          // Key: f
-          // if (event.keyCode == 74)
-          // Key: j
-          // if (event.keycode == 75)
-          // Key: k
-           
-        };
+      
+        
 
 
 
         // window.onkeydown = function() {}
+        this.bubba = this.createBubba();
         this.startFrogEscape();
         this.intervalLilypad();
-        this.createBubba();
+        this.moveBubba();
     },
 
     startFrogEscape: function () {
@@ -51,7 +43,7 @@ FrogEscapeApp = {
 
     animateGame: function () {
         // this.createLilypad(); 
-      //  this.placementLilypad();
+     //   this.placementLilypad();
         this.moveLilypads();
         this.renderLilypads();
         this.removeLilypads();
@@ -62,9 +54,10 @@ FrogEscapeApp = {
     },
 
     createLilypad: function () {
-        console.log("Creating Lilypads.")
+     //   console.log("Creating Lilypads.")
         let lilypaddiv = document.createElement("div");
         lilypaddiv.className = "lilypad";
+       // FrogEscapeApp.lanes.append(lilypaddiv);
 
         // Randomly decide which row 0,1,2,3
         // Append to that chosen row
@@ -76,7 +69,7 @@ FrogEscapeApp = {
             x_pos: 35,
             y_pos: 10,
             x_velocity: 0,
-            y_velocity: 3,
+            y_velocity: 10,
             element: lilypaddiv,
             placement: Math.round(Math.random() * 3),
         }
@@ -98,7 +91,7 @@ FrogEscapeApp = {
     },
 
     intervalLilypad: function () {
-        this.interval = window.setInterval(this.createLilypad.bind(FrogEscapeApp), 800)
+        this.interval = window.setInterval(this.createLilypad.bind(FrogEscapeApp), 500)
     },
 
 
@@ -141,15 +134,64 @@ FrogEscapeApp = {
 
   createBubba: function () {
         //CSS Top: 650 Left: 425
-    console.log("checking bubba")
+  //  console.log("checking bubba")
     let bubbadiv = document.createElement("div");
      bubbadiv.className = "bubba";
+     let bubba = {
+        lilypad: 0,
+        x_pos: 30,
+        element: bubbadiv,
+     }
      FrogEscapeApp.lilypads[0].element.append(bubbadiv);
-     bubbadiv.lilypad
+        
+        return bubba
    },
 
     moveBubba: function () {
+        window.onkeydown = function (event) {
+            console.log(event.keyCode);
+            
+           if (event.keyCode == 68) {
+               if (FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].placement == 0) {
+                   console.log("pondLane1")
 
+                   FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad].element.removeChild(FrogEscapeApp.bubba.element);
+                   FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].element.append(FrogEscapeApp.bubba.element);
+                   FrogEscapeApp.bubba.lilypad = FrogEscapeApp.bubba.lilypad + 1
+               }
+           }
+
+          // Key: d
+           if (event.keyCode == 70) {
+            if (FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].placement == 1) {
+                console.log("pondLane2")
+                FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad].element.removeChild(FrogEscapeApp.bubba.element);
+                FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].element.append(FrogEscapeApp.bubba.element);
+                FrogEscapeApp.bubba.lilypad = FrogEscapeApp.bubba.lilypad + 1
+            }
+        }
+          // Key: f
+           if (event.keyCode == 74) {
+            if (FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].placement == 2) {
+                console.log("pondLane3")
+                
+                FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad].element.removeChild(FrogEscapeApp.bubba.element);
+                FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].element.append(FrogEscapeApp.bubba.element);
+                FrogEscapeApp.bubba.lilypad = FrogEscapeApp.bubba.lilypad + 1
+            }
+        }
+          // Key: j
+           if (event.keyCode == 75) {
+            if (FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].placement == 3) {
+                console.log("pondLane4")
+               
+                FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad].element.removeChild(FrogEscapeApp.bubba.element);
+                FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].element.append(FrogEscapeApp.bubba.element);
+                FrogEscapeApp.bubba.lilypad = FrogEscapeApp.bubba.lilypad + 1
+            }
+        }
+          // Key: k
+        }
     },
 
     checkBubbaPosition: function () {
