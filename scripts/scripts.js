@@ -145,6 +145,7 @@ FrogEscapeApp = {
     let bubbadiv = document.createElement("div");
      bubbadiv.className = "bubba";
      FrogEscapeApp.lilypads[0].element.append(bubbadiv);
+     bubbadiv.lilypad
    },
 
     moveBubba: function () {
