@@ -29,6 +29,7 @@ h1 {
     padding-left: 30px;
     padding-right: 30px;
     padding-bottom: 80px;
+    
 }
 
 #frog_pond {
@@ -45,6 +46,7 @@ h1 {
     position: relative;
     width: 125px;
     border: 1px solid black;
+    z-index: 150;
     
 }
 
@@ -67,5 +69,13 @@ h1 {
     background-color: green;
     z-index: 50;
 
+}
+
+.gameOver {
+    position: absolute;
+    background-color: white;
+    align-self: center;
+    top: 200px;
+    width: 925px;
 }
 
