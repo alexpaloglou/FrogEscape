@@ -13,23 +13,14 @@ FrogEscapeApp = {
     container: document.getElementById("frog_pond"),
     paused: false,
     interval: undefined,
+    startBtn: document.getElementById("startBtn"),
 
     init: function () {
+        startBtn.style.display = "none";
         for (let i = 0; i < 1; i++) {
             this.createLilypad();
-            //this.lilypads.push(this.createLilypad());
-            //this.lilypads[i].y_velocity = 3.5
 
         }
-
-        //this.lilypads[0].y_pos =  Math.random() * 150 + 150,
-        // this.lilypads[1].y_pos =  Math.random() * 150 + 300,
-        //  this.lilypads[2].y_pos =  Math.random() * 150 + 450,
-
-
-
-
-
         // window.onkeydown = function() {}
         this.bubba = this.createBubba();
         this.startFrogEscape();
@@ -221,6 +212,7 @@ FrogEscapeApp = {
  //   },
 
     togglePause: function () {
+        console.log("pauseGame")
         window.onkeydown = function (event) {
             if (event.keycode == 65) { // A key 
 

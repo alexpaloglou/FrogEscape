@@ -15,6 +15,15 @@ h1 {
     
 }
 
+#startBtn {
+    position: absolute;
+    top: 400px;
+    width: 200px;
+    left: 250px;
+    height: 100px;
+    font-size: 20px;
+}
+
 #frog_escape {
     display: flex;
     flex-direction: row;
