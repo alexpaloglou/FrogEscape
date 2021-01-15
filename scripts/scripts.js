@@ -247,18 +247,9 @@ FrogEscapeApp = {
 
         }
         this.lilypads = [];
-<<<<<<< HEAD
-        gameOver.textContent = "GAME OVER!";
+        gameOver.textContent = "GAME OVER! Score: " + FrogEscapeApp.bubba.lilypad;
         gameOver.style.textAlign = "center";
         gameOver.style.fontFamily = "arial";
-=======
-      //  container.style.color = "white";
-        
-     //   gameOver.textContent = "GAME OVER!";
-        gameOver.textContent = "Game Over! Score: " + FrogEscapeApp.bubba.lilypad;
-       // gameOver.style.textAlign = "center";
-      // gameOver.style.fontFamily = "fantasy";
->>>>>>> 97f817c16f7bf729992f4386339cd103baaf20fd
         gameOver.style.color = "black"
         gameOver.style.fontSize = "80";
       //  gameOver.style.verticalAlign = "middle";
