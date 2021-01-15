@@ -5,8 +5,7 @@ FrogEscapeApp = {
     document.getElementById("pondLane3"),
     document.getElementById("pondLane4"),],
 
-    //  score: 0,
-    //  scoreElement = document.getElementById("score"),
+    resetBtn: document.getElementById("gameOver"),
     bubba: undefined,
     lilypads: [],
     game: undefined,
@@ -17,7 +16,7 @@ FrogEscapeApp = {
 
     //Alex's Code
     init: function () {
-        startBtn.style.display = "none";
+      //  startBtn.style.display = "none";
         for (let i = 0; i < 1; i++) {
             this.createLilypad();
 
@@ -89,7 +88,7 @@ FrogEscapeApp = {
     },
 
     intervalLilypad: function () {
-        this.interval = window.setInterval(this.createLilypad.bind(FrogEscapeApp), 200)
+        this.interval = window.setInterval(this.createLilypad.bind(FrogEscapeApp), 500)
     },
 
     //Erik's Code
@@ -109,7 +108,9 @@ FrogEscapeApp = {
             this.lilypads[i].element.style.top = this.lilypads[i].y_pos + "px";
             this.lilypads[i].element.style.left = this.lilypads[i].x_pos + "px";
         }
-        document.getElementById('score').textContent = "Score: " + FrogEscapeApp.bubba.lilypad;
+        let score = document.getElementById('score')
+        score.textContent = "Score: " + FrogEscapeApp.bubba.lilypad;
+
     },
     //Erik's Code
     removeLilypads: function () {
@@ -229,9 +230,12 @@ FrogEscapeApp = {
     //Erik modified old code from our friend Acer Cristea 
     gameOver: function () {
         console.log("Game Over!")
-        let gameOver = document.createElement('h1');
+        let gameOver = document.createElement('h2');
+      //  let container = document.getElementById("frog_pond")
+      //  let lanes = document.getElementsByClassName
         window.clearInterval(this.game);
         window.clearInterval(this.interval);
+        console.log("Clear Lane")
         for (let i = 0; i < this.lilypads.length; i++) {
             if (this.lilypads[i].y_velocity != null) {
                 this.lilypads[i].y_velocity = null;
@@ -243,30 +247,27 @@ FrogEscapeApp = {
 
         }
         this.lilypads = [];
+<<<<<<< HEAD
         gameOver.textContent = "GAME OVER!";
         gameOver.style.textAlign = "center";
         gameOver.style.fontFamily = "arial";
+=======
+      //  container.style.color = "white";
+        
+     //   gameOver.textContent = "GAME OVER!";
+        gameOver.textContent = "Game Over! Score: " + FrogEscapeApp.bubba.lilypad;
+       // gameOver.style.textAlign = "center";
+      // gameOver.style.fontFamily = "fantasy";
+>>>>>>> 97f817c16f7bf729992f4386339cd103baaf20fd
         gameOver.style.color = "black"
-        gameOver.style.fontSize = "50";
-        gameOver.style.verticalAlilgn = "middle";
-        gameOver.style.backgroundColor = "white";
+        gameOver.style.fontSize = "80";
+      //  gameOver.style.verticalAlign = "middle";
+        gameOver.style.backgroundColor = "green";
         gameOver.className = "gameOver";
-        document.body.append(gameOver);
+         document.body.append(gameOver);
+
     }
 },
 
     FrogEscapeApp.init();
-
-
-
-
-
-
-
-
-
-
-
-
-
 
