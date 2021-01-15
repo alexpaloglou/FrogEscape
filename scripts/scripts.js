@@ -15,6 +15,7 @@ FrogEscapeApp = {
     interval: undefined,
     startBtn: document.getElementById("startBtn"),
 
+    //Alex's Code
     init: function () {
         startBtn.style.display = "none";
         for (let i = 0; i < 1; i++) {
@@ -34,6 +35,7 @@ FrogEscapeApp = {
 
     },
 
+    //Alex's Code
     animateGame: function () {
         // this.createLilypad(); 
         //   this.placementLilypad();
@@ -43,11 +45,12 @@ FrogEscapeApp = {
         // this.togglePause();
         // this.moveBubba();
         // this.animateBubba();
-       //  this.checkBubbaPosition();
+        //  this.checkBubbaPosition();
         // scoreElement.textContent = "Score: " + score;
-       // document.getElementById('score').textContent = "Score: " + FrogEscapeApp.bubba.lilypad;
+        // document.getElementById('score').textContent = "Score: " + FrogEscapeApp.bubba.lilypad;
     },
 
+    //Erik's Code
     createLilypad: function () {
         //   console.log("Creating Lilypads.")
         let lilypaddiv = document.createElement("div");
@@ -89,7 +92,7 @@ FrogEscapeApp = {
         this.interval = window.setInterval(this.createLilypad.bind(FrogEscapeApp), 200)
     },
 
-
+    //Erik's Code
     moveLilypads: function () {
         //   console.log("Moving Lilypads")
         for (let i = 0; i < this.lilypads.length; i++) {
@@ -99,6 +102,7 @@ FrogEscapeApp = {
         }
     },
 
+    //Erik's Code
     renderLilypads: function () {
         //   console.log("Rendering Lilypads");
         for (let i = 0; i < this.lilypads.length; i++) {
@@ -107,7 +111,7 @@ FrogEscapeApp = {
         }
         document.getElementById('score').textContent = "Score: " + FrogEscapeApp.bubba.lilypad;
     },
-
+    //Erik's Code
     removeLilypads: function () {
         //   console.log("Removing any Lilypads that needs to be removed.")
         for (let i = 0; i < this.lilypads.length; i++) {
@@ -130,7 +134,7 @@ FrogEscapeApp = {
 
         //  console.log("Removing any Lilypads that needs to be removed.")
     },
-
+    // Alex's Code 
     createBubba: function () {
         //CSS Top: 650 Left: 425
         //  console.log("checking bubba")
@@ -142,10 +146,10 @@ FrogEscapeApp = {
             element: bubbadiv,
         }
         FrogEscapeApp.lilypads[0].element.append(bubbadiv);
-        
+
         return bubba
     },
-
+    //Alex and Erik combined Code
     moveBubba: function () {
         window.onkeydown = function (event) {
             console.log(event.keyCode);
@@ -157,68 +161,63 @@ FrogEscapeApp = {
                     FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad].element.removeChild(FrogEscapeApp.bubba.element);
                     FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].element.append(FrogEscapeApp.bubba.element);
                     FrogEscapeApp.bubba.lilypad = FrogEscapeApp.bubba.lilypad + 1
-
-
                 }
-                
+            }
+
+            // Key: d
+            if (event.keyCode == 70) {
+                if (FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].placement == 1) {
+                    console.log("pondLane2")
+                    FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad].element.removeChild(FrogEscapeApp.bubba.element);
+                    FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].element.append(FrogEscapeApp.bubba.element);
+                    FrogEscapeApp.bubba.lilypad = FrogEscapeApp.bubba.lilypad + 1
                 }
+            }
+            // Key: f
+            if (event.keyCode == 74) {
+                if (FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].placement == 2) {
+                    console.log("pondLane3")
 
-                // Key: d
-                if (event.keyCode == 70) {
-                    if (FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].placement == 1) {
-                        console.log("pondLane2")
-                        FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad].element.removeChild(FrogEscapeApp.bubba.element);
-                        FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].element.append(FrogEscapeApp.bubba.element);
-                        FrogEscapeApp.bubba.lilypad = FrogEscapeApp.bubba.lilypad + 1
-                    }
-                    
-                    }
-                    // Key: f
-                    if (event.keyCode == 74) {
-                        if (FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].placement == 2) {
-                            console.log("pondLane3")
+                    FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad].element.removeChild(FrogEscapeApp.bubba.element);
+                    FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].element.append(FrogEscapeApp.bubba.element);
+                    FrogEscapeApp.bubba.lilypad = FrogEscapeApp.bubba.lilypad + 1
+                }
+            }
+            // Key: j
+            if (event.keyCode == 75) {
+                if (FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].placement == 3) {
+                    console.log("pondLane4")
 
-                            FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad].element.removeChild(FrogEscapeApp.bubba.element);
-                            FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].element.append(FrogEscapeApp.bubba.element);
-                            FrogEscapeApp.bubba.lilypad = FrogEscapeApp.bubba.lilypad + 1
-                        }
-                        
-                        }
-                        // Key: j
-                        if (event.keyCode == 75) {
-                            if (FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].placement == 3) {
-                                console.log("pondLane4")
+                    FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad].element.removeChild(FrogEscapeApp.bubba.element);
+                    FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].element.append(FrogEscapeApp.bubba.element);
+                    FrogEscapeApp.bubba.lilypad = FrogEscapeApp.bubba.lilypad + 1
+                }
+            }
+            // Key: k
+            // Triggered by Player pressed wrong button
 
-                                FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad].element.removeChild(FrogEscapeApp.bubba.element);
-                                FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].element.append(FrogEscapeApp.bubba.element);
-                                FrogEscapeApp.bubba.lilypad = FrogEscapeApp.bubba.lilypad + 1
-                            }
-                            
-                            }
-                            // Key: k
-                            // Triggered by Player pressed wrong button
-                        
-                    
-                
-            
+
+
+
         }
     },
 
-   // checkBubbaPosition: function () {
-   //     if () {
+    // checkBubbaPosition: function () {
+    //     if () {
     //        console.log("Game Over")
     //    }
-    
- //   },
 
+    //   },
+
+    //Alex's Code
+    //TogglePause came from a user in StackOverflow
     togglePause: function () {
         console.log("pauseGame")
         window.onkeydown = function (event) {
-            if (event.keycode == 65) { // A key 
-
+            if (event.keycode == 32) { // Spacebar Key 
+            
             }
-
-
+            
             if (!paused) {
                 paused = true;
             }
@@ -227,26 +226,26 @@ FrogEscapeApp = {
             }
         }
     },
-    //Acer Cristea's code
+    //Erik modified old code from our friend Acer Cristea 
     gameOver: function () {
         console.log("Game Over!")
         let gameOver = document.createElement('h1');
         window.clearInterval(this.game);
         window.clearInterval(this.interval);
         for (let i = 0; i < this.lilypads.length; i++) {
-                if (this.lilypads[i].y_velocity != null) {
-                    this.lilypads[i].y_velocity = null;
-                    //this.lanes.splice(i, 1);
-                    //   console.log(this.lanes[this.lilypads[i].placement])
-                    //   console.log(this.lilypads[i].placement)
-                    this.lanes[this.lilypads[i].placement].removeChild(this.lilypads[i].element);
-                }
-                
+            if (this.lilypads[i].y_velocity != null) {
+                this.lilypads[i].y_velocity = null;
+                //this.lanes.splice(i, 1);
+                //   console.log(this.lanes[this.lilypads[i].placement])
+                //   console.log(this.lilypads[i].placement)
+                this.lanes[this.lilypads[i].placement].removeChild(this.lilypads[i].element);
+            }
+
         }
         this.lilypads = [];
         gameOver.textContent = "GAME OVER!";
         gameOver.style.textAlign = "center";
-        gameOver.style.fontFamily = "fantasy";
+        gameOver.style.fontFamily = "arial";
         gameOver.style.color = "black"
         gameOver.style.fontSize = "50";
         gameOver.style.verticalAlilgn = "middle";
