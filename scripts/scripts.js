@@ -295,15 +295,9 @@ FrogEscapeApp = {
             }
             // Key: k
             // Triggered by Player pressed wrong button
-
-
-
-
         }
     },
 
-
-   
     //Erik modified old code from our friend Acer Cristea 
     gameOver: function () {
         console.log("Game Over!")
@@ -322,7 +316,6 @@ FrogEscapeApp = {
                 //   console.log(this.lilypads[i].placement)
                 this.lanes[this.lilypads[i].placement].removeChild(this.lilypads[i].element);
             }
-
         }
         this.lilypads = [];
         gameOver.textContent = "GAME OVER! Score: " + FrogEscapeApp.bubba.lilypad +" " + "Click to restart";
@@ -343,10 +336,8 @@ FrogEscapeApp = {
            // document.body.removeChild(gameOver);
            // FrogEscapeApp.container.removeChild(backGround);
             console.log("Restarting")
-            
         }
     },
-
 },
 
     FrogEscapeApp.init();
