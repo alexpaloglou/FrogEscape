@@ -28,6 +28,13 @@ FrogEscapeApp = {
         this.startFrogEscape();
         this.intervalLilypad();
         this.moveBubba();
+        window.onkeyup = function (event) {
+            if (event.keyCode == 27) // ESC key 
+            {
+
+                history.back();
+            }
+        }
 
     },
 
@@ -78,9 +85,9 @@ FrogEscapeApp = {
     intervalLilypad: function () {
         this.interval = window.setInterval(this.createLilypad.bind(FrogEscapeApp), 500)
     },
-
+    //Erik's Code
     timeCheck: function () {
-        if (FrogEscapeApp.bubba.lilypad == 10) {
+        if (FrogEscapeApp.bubba.lilypad == 20) {
             if (this.test == 0) {
             window.clearInterval(this.interval);
             this.interval = window.setInterval(this.createLilypad2.bind(FrogEscapeApp), 400)
@@ -91,7 +98,7 @@ FrogEscapeApp = {
         if (FrogEscapeApp.bubba.lilypad == 40) {
             if (this.test == 1) {
             window.clearInterval(this.interval);
-            this.interval = window.setInterval(this.createLilypad3.bind(FrogEscapeApp), 300)
+            this.interval = window.setInterval(this.createLilypad3.bind(FrogEscapeApp), 350)
             console.log("Increase Speed 2");
             this.test = 2;
             }
@@ -99,15 +106,31 @@ FrogEscapeApp = {
         if (FrogEscapeApp.bubba.lilypad == 60) {
             if (this.test == 2) {
             window.clearInterval(this.interval);
-            this.interval = window.setInterval(this.createLilypad4.bind(FrogEscapeApp), 200)
+            this.interval = window.setInterval(this.createLilypad4.bind(FrogEscapeApp), 300)
             console.log("Increase Speed 3");
             this.test = 3;
+            }
+        }
+        if (FrogEscapeApp.bubba.lilypad == 80) {
+            if (this.test == 3) {
+            window.clearInterval(this.interval);
+            this.interval = window.setInterval(this.createLilypad5.bind(FrogEscapeApp), 300)
+            console.log("Increase Speed 4");
+            this.test = 4;
+            }
+        }
+        if (FrogEscapeApp.bubba.lilypad == 100) {
+            if (this.test == 4) {
+            window.clearInterval(this.interval);
+            this.interval = window.setInterval(this.createLilypad6.bind(FrogEscapeApp), 300)
+            console.log("Increase Speed 5");
+            this.test = 5;
             }
         }
     },
 
 
-
+    // Erik's Code
     createLilypad2: function () {
         let lilypaddiv = document.createElement("div");
         lilypaddiv.className = "lilypad";
@@ -194,6 +217,64 @@ FrogEscapeApp = {
       // console.log(lilypad);
       FrogEscapeApp.lilypads.push(lilypad);
   },
+
+  createLilypad5: function () {
+    let lilypaddiv = document.createElement("div");
+    lilypaddiv.className = "lilypad";
+
+    let lilypad = {
+        x_pos: 35,
+        y_pos: 10,
+        x_velocity: 0,
+        y_velocity: 14,
+        element: lilypaddiv,
+        placement: Math.round(Math.random() * 3),
+    }
+    if (lilypad.placement == 0) {
+        FrogEscapeApp.lanes[0].append(lilypad.element)
+    }
+    if (lilypad.placement == 1) {
+        FrogEscapeApp.lanes[1].append(lilypad.element)
+    }
+    if (lilypad.placement == 2) {
+        FrogEscapeApp.lanes[2].append(lilypad.element)
+    }
+    if (lilypad.placement == 3) {
+        FrogEscapeApp.lanes[3].append(lilypad.element)
+    }
+
+    // console.log(lilypad);
+    FrogEscapeApp.lilypads.push(lilypad);
+},
+
+createLilypad6: function () {
+    let lilypaddiv = document.createElement("div");
+    lilypaddiv.className = "lilypad";
+
+    let lilypad = {
+        x_pos: 35,
+        y_pos: 10,
+        x_velocity: 0,
+        y_velocity: 15,
+        element: lilypaddiv,
+        placement: Math.round(Math.random() * 3),
+    }
+    if (lilypad.placement == 0) {
+        FrogEscapeApp.lanes[0].append(lilypad.element)
+    }
+    if (lilypad.placement == 1) {
+        FrogEscapeApp.lanes[1].append(lilypad.element)
+    }
+    if (lilypad.placement == 2) {
+        FrogEscapeApp.lanes[2].append(lilypad.element)
+    }
+    if (lilypad.placement == 3) {
+        FrogEscapeApp.lanes[3].append(lilypad.element)
+    }
+
+    // console.log(lilypad);
+    FrogEscapeApp.lilypads.push(lilypad);
+},
 
     //Erik's Code
     moveLilypads: function () {

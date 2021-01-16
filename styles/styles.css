@@ -102,6 +102,12 @@ h1 {
     z-index: 300;
 }
 
+body h2:hover {
+    background: lightgreen;
+}
+
+
+
 #score {
     position: relative;
     top: 28px;
