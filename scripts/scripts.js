@@ -14,6 +14,7 @@ FrogEscapeApp = {
     interval: undefined,
     startBtn: document.getElementById("startBtn"),
     test: 0, //for TimeCheck
+    
 
     //Alex's Code
     init: function () {
@@ -122,7 +123,7 @@ FrogEscapeApp = {
             x_pos: 35,
             y_pos: 10,
             x_velocity: 0,
-            y_velocity: 12,
+            y_velocity: 11,
             element: lilypaddiv,
             placement: Math.round(Math.random() * 3),
         }
@@ -151,7 +152,7 @@ FrogEscapeApp = {
             x_pos: 35,
             y_pos: 10,
             x_velocity: 0,
-            y_velocity: 14,
+            y_velocity: 12,
             element: lilypaddiv,
             placement: Math.round(Math.random() * 3),
         }
@@ -180,7 +181,7 @@ FrogEscapeApp = {
           x_pos: 35,
           y_pos: 10,
           x_velocity: 0,
-          y_velocity: 16,
+          y_velocity: 13,
           element: lilypaddiv,
           placement: Math.round(Math.random() * 3),
       }
@@ -345,7 +346,7 @@ FrogEscapeApp = {
       //  let container = document.getElementById("frog_pond")
       //  let lanes = document.getElementsByClassName
         window.clearInterval(this.game);
-        window.clearInterval(this.interval);
+        window.clearInterval(this.interval)
         for (let i = 0; i < this.lilypads.length; i++) {
             if (this.lilypads[i].y_velocity != null) {
                 this.lilypads[i].y_velocity = null;
@@ -369,10 +370,11 @@ FrogEscapeApp = {
          document.body.append(gameOver);
          this.container.append(backGround);
         gameOver.onclick = function() {
-            FrogEscapeApp.init()
-            this.interval = undefined;
-            document.body.removeChild(gameOver);
-            FrogEscapeApp.container.removeChild(backGround);
+            location.reload();
+            return false;
+           // FrogEscapeApp.init()
+           // document.body.removeChild(gameOver);
+           // FrogEscapeApp.container.removeChild(backGround);
             console.log("Restarting")
             
         }
