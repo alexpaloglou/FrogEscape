@@ -15,6 +15,13 @@ h1 {
     
     
 }
+.Text {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    font-size: medium;
+    top: 30px;
+}
 
 #startBTN {
     position: absolute;
@@ -111,4 +118,5 @@ h1 {
     height: 699px;
     z-index: 295;
 }
+
 

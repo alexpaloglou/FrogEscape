@@ -227,7 +227,7 @@ FrogEscapeApp = {
     removeLilypads: function () {
         //   console.log("Removing any Lilypads that needs to be removed.")
         for (let i = 0; i < this.lilypads.length; i++) {
-            if (this.lilypads[i].y_pos >= 700) {
+            if (this.lilypads[i].y_pos >= 660) {
                 if (this.lilypads[i].y_velocity != null) {
                     this.lilypads[i].y_velocity = null;
                     //this.lanes.splice(i, 1);
