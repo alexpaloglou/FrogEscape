@@ -10,15 +10,13 @@ FrogEscapeApp = {
     lilypads: [],
     game: undefined,
     container: document.getElementById("frog_pond"),
-    paused: false,
     interval: undefined,
     startBtn: document.getElementById("startBtn"),
     test: 0, //for TimeCheck
-    
 
     //Alex's Code
     init: function () {
-      //  startBtn.style.display = "none";
+        //  startBtn.style.display = "none";
         for (let i = 0; i < 1; i++) {
             this.createLilypad();
 
@@ -82,31 +80,29 @@ FrogEscapeApp = {
     timeCheck: function () {
         if (FrogEscapeApp.bubba.lilypad == 10) {
             if (this.test == 0) {
-            window.clearInterval(this.interval);
-            this.interval = window.setInterval(this.createLilypad2.bind(FrogEscapeApp), 400)
-            console.log("Increase Speed 1");
-            this.test = 1;
+                window.clearInterval(this.interval);
+                this.interval = window.setInterval(this.createLilypad2.bind(FrogEscapeApp), 400)
+                console.log("Increase Speed 1");
+                this.test = 1;
             }
         }
         if (FrogEscapeApp.bubba.lilypad == 40) {
             if (this.test == 1) {
-            window.clearInterval(this.interval);
-            this.interval = window.setInterval(this.createLilypad3.bind(FrogEscapeApp), 300)
-            console.log("Increase Speed 2");
-            this.test = 2;
+                window.clearInterval(this.interval);
+                this.interval = window.setInterval(this.createLilypad3.bind(FrogEscapeApp), 300)
+                console.log("Increase Speed 2");
+                this.test = 2;
             }
         }
         if (FrogEscapeApp.bubba.lilypad == 60) {
             if (this.test == 2) {
-            window.clearInterval(this.interval);
-            this.interval = window.setInterval(this.createLilypad4.bind(FrogEscapeApp), 200)
-            console.log("Increase Speed 3");
-            this.test = 3;
+                window.clearInterval(this.interval);
+                this.interval = window.setInterval(this.createLilypad4.bind(FrogEscapeApp), 200)
+                console.log("Increase Speed 3");
+                this.test = 3;
             }
         }
     },
-
-
 
     createLilypad2: function () {
         let lilypaddiv = document.createElement("div");
@@ -166,34 +162,34 @@ FrogEscapeApp = {
         FrogEscapeApp.lilypads.push(lilypad);
     },
 
-  createLilypad4: function () {
-      let lilypaddiv = document.createElement("div");
-      lilypaddiv.className = "lilypad";
+    createLilypad4: function () {
+        let lilypaddiv = document.createElement("div");
+        lilypaddiv.className = "lilypad";
 
-      let lilypad = {
-          x_pos: 35,
-          y_pos: 10,
-          x_velocity: 0,
-          y_velocity: 13,
-          element: lilypaddiv,
-          placement: Math.round(Math.random() * 3),
-      }
-      if (lilypad.placement == 0) {
-          FrogEscapeApp.lanes[0].append(lilypad.element)
-      }
-      if (lilypad.placement == 1) {
-          FrogEscapeApp.lanes[1].append(lilypad.element)
-      }
-      if (lilypad.placement == 2) {
-          FrogEscapeApp.lanes[2].append(lilypad.element)
-      }
-      if (lilypad.placement == 3) {
-          FrogEscapeApp.lanes[3].append(lilypad.element)
-      }
+        let lilypad = {
+            x_pos: 35,
+            y_pos: 10,
+            x_velocity: 0,
+            y_velocity: 13,
+            element: lilypaddiv,
+            placement: Math.round(Math.random() * 3),
+        }
+        if (lilypad.placement == 0) {
+            FrogEscapeApp.lanes[0].append(lilypad.element)
+        }
+        if (lilypad.placement == 1) {
+            FrogEscapeApp.lanes[1].append(lilypad.element)
+        }
+        if (lilypad.placement == 2) {
+            FrogEscapeApp.lanes[2].append(lilypad.element)
+        }
+        if (lilypad.placement == 3) {
+            FrogEscapeApp.lanes[3].append(lilypad.element)
+        }
 
-      // console.log(lilypad);
-      FrogEscapeApp.lilypads.push(lilypad);
-  },
+        // console.log(lilypad);
+        FrogEscapeApp.lilypads.push(lilypad);
+    },
 
     //Erik's Code
     moveLilypads: function () {
@@ -256,7 +252,7 @@ FrogEscapeApp = {
 
             if (event.keyCode == 68) {
                 if (FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].placement == 0) {
-                    
+
 
                     FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad].element.removeChild(FrogEscapeApp.bubba.element);
                     FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].element.append(FrogEscapeApp.bubba.element);
@@ -267,7 +263,7 @@ FrogEscapeApp = {
             // Key: d
             if (event.keyCode == 70) {
                 if (FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].placement == 1) {
-                   
+
                     FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad].element.removeChild(FrogEscapeApp.bubba.element);
                     FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].element.append(FrogEscapeApp.bubba.element);
                     FrogEscapeApp.bubba.lilypad = FrogEscapeApp.bubba.lilypad + 1
@@ -276,7 +272,7 @@ FrogEscapeApp = {
             // Key: f
             if (event.keyCode == 74) {
                 if (FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].placement == 2) {
-                    
+
 
                     FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad].element.removeChild(FrogEscapeApp.bubba.element);
                     FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].element.append(FrogEscapeApp.bubba.element);
@@ -286,7 +282,7 @@ FrogEscapeApp = {
             // Key: j
             if (event.keyCode == 75) {
                 if (FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].placement == 3) {
-                  
+
 
                     FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad].element.removeChild(FrogEscapeApp.bubba.element);
                     FrogEscapeApp.lilypads[FrogEscapeApp.bubba.lilypad + 1].element.append(FrogEscapeApp.bubba.element);
@@ -304,8 +300,8 @@ FrogEscapeApp = {
         let gameOver = document.createElement('h2');
         let backGround = document.createElement('div');
         backGround.className = "Background";
-      //  let container = document.getElementById("frog_pond")
-      //  let lanes = document.getElementsByClassName
+        //  let container = document.getElementById("frog_pond")
+        //  let lanes = document.getElementsByClassName
         window.clearInterval(this.game);
         window.clearInterval(this.interval)
         for (let i = 0; i < this.lilypads.length; i++) {
@@ -318,23 +314,23 @@ FrogEscapeApp = {
             }
         }
         this.lilypads = [];
-        gameOver.textContent = "GAME OVER! Score: " + FrogEscapeApp.bubba.lilypad +" " + "Click to restart";
+        gameOver.textContent = "GAME OVER! Score: " + FrogEscapeApp.bubba.lilypad + " " + "Click to restart";
         gameOver.style.textAlign = "center";
         gameOver.style.fontFamily = "arial";
         gameOver.style.color = "black"
         gameOver.style.fontSize = "80";
-      //  gameOver.style.verticalAlign = "middle";
-       // gameOver.style.backgroundColor = "green";
+        //  gameOver.style.verticalAlign = "middle";
+        // gameOver.style.backgroundColor = "green";
         gameOver.className = "gameOver";
-         this.bubba = undefined;
-         document.body.append(gameOver);
-         this.container.append(backGround);
-        gameOver.onclick = function() {
+        this.bubba = undefined;
+        document.body.append(gameOver);
+        this.container.append(backGround);
+        gameOver.onclick = function () {
             location.reload();
             return false;
-           // FrogEscapeApp.init()
-           // document.body.removeChild(gameOver);
-           // FrogEscapeApp.container.removeChild(backGround);
+            // FrogEscapeApp.init()
+            // document.body.removeChild(gameOver);
+            // FrogEscapeApp.container.removeChild(backGround);
             console.log("Restarting")
         }
     },
