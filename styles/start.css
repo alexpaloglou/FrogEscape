@@ -1,5 +1,5 @@
 body {
-    background: url("https://wallpapertag.com/wallpaper/full/1/1/3/959987-pepe-the-frog-wallpapers-1920x1080-for-retina.jpg") no-repeat;
+    background: url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2F3.bp.blogspot.com%2F-tzpbXU5iyz4%2FUjgFAROzTTI%2FAAAAAAAAZAY%2FKJK4xudBREo%2Fs1920%2Fred_frog-1080.jpg&f=1&nofb=1") no-repeat;
     background-size: cover;
 
     
@@ -20,14 +20,22 @@ body {
       text-decoration:wavy;
       align-self: center;
       display: block;
-      padding: 1.5em;
+      padding: 1em;
       color: black;
       font-size: x-large;
       font-family: "Lucida Console", "Courier New", monospace;
-  
+      
     }
   
     .navigation a:hover {
       background: green;
+    }
+
+    .Text {
+        align-self: center;
+        flex-direction: row;
+        font-size: x-large;
+        top: 30px;
+        color: white;
     }
     
